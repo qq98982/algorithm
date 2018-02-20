@@ -1,0 +1,37 @@
+target*
+*.war
+*.ear
+*.class
+classes/
+*.gradle
+.gradle/
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*~.nib
+local.properties
+.loadpath
+build/
+out/
+# IDEA #
+.idea/
+*.iml
+.svn
+.idea
+.idea/workspace.xml
+
+# Eclipse #
+.settings/
+.classpath
+.project
+
+# jrebel #
+src/main/resources/rebel.xml
+
+#*[Tt][Ee][Ss][Tt]*
+*TEST*
+.springBeans
+*ZHY*
