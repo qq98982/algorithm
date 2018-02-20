@@ -25,13 +25,13 @@ public class SubSet {
         Arrays.sort(nums);
         // Use recursion to get results
         List<Integer> subset = new ArrayList<>();
-        recusion(subset, nums, 0, results);
+        recursion(subset, nums, 0, results);
         return results;
     }
 
     // Recursion part
-    private void recusion(List<Integer> subset, int[] nums, int startIndex,
-                          List<List<Integer>> results) {
+    private void recursion(List<Integer> subset, int[] nums, int startIndex,
+                           List<List<Integer>> results) {
         // Deep copy
         results.add(new ArrayList<>(subset));
 
@@ -39,7 +39,7 @@ public class SubSet {
         for (int j = startIndex; j < nums.length; j++) {
             // In for loop 1. add current point 2. exec recursion 3. restore current point
             subset.add(nums[j]);
-            recusion(subset, nums, j + 1, results);
+            recursion(subset, nums, j + 1, results);
             subset.remove(subset.size() - 1);
         }
     }
