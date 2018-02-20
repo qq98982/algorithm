@@ -12,7 +12,7 @@ import java.util.List;
  * [ [3], [1], [2], [1,2,3], [1,3], [2,3], [1,2], [] ]
  */
 public class SubSet {
-    private List<List<Integer>> getSublist(int[] nums) {
+    List<List<Integer>> getSublist(int[] nums) {
         // Init a list to receive results
         List<List<Integer>> results = new ArrayList<>();
 
@@ -42,16 +42,5 @@ public class SubSet {
             recursion(subset, nums, j + 1, results);
             subset.remove(subset.size() - 1);
         }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = { 1, 2, 7, 6 };
-        SubSet subSet = new SubSet();
-        List<List<Integer>> sublist = subSet.getSublist(nums);
-        assert 16 == sublist.size();
-        sublist.forEach(x -> {
-            System.out.println();
-            System.out.println(x);
-        });
     }
 }
