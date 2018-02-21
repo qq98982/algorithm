@@ -15,16 +15,17 @@ import java.util.List;
  * [ [7], [2, 2, 3] ]
  */
 public class CombinationSum {
-    // Question 1: how to choose repeated numbers
-    // Question 2: why positive integer
+    // Question 1: how to choose repeated numbers.
+    // Question 2: why positive integer.
 
     List<List<Integer>> getCombinationSum(int[] nums, int target) {
         List<List<Integer>> results = new ArrayList<>();
-        // Validate parameters
+        // Validate parameters.
         if (null == nums || nums.length == 0) {
             return results;
         }
 
+        // Sort int[] first
         Arrays.sort(nums);
         List<Integer> combination = new ArrayList<>();
         recursion(nums, combination, results, 0, target);
@@ -33,15 +34,24 @@ public class CombinationSum {
 
     private void recursion(int[] nums, List<Integer> combination, List<List<Integer>> results, int startIndex,
                            int remainToTarget) {
+        // If it reaches target, add it to results, else not.
+        // This is the end condition of this recursion.
         if (remainToTarget == 0) {
             results.add(new ArrayList<>(combination));
             return;
         }
         for (int i = startIndex; i < nums.length; i++) {
+            // Add efficiency
             if (remainToTarget < nums[i]) {
                 break;
             }
+            // For repeated numbers in nums.
+            if (i != 0 && nums[i - 1] == nums[i]) {
+                continue;
+            }
             combination.add(nums[i]);
+            // i is for repeat selecting numbers, because it can choose
+            // repeated numbers, it is not suitable to use non positive numbers.
             recursion(nums, combination, results, i, remainToTarget - nums[i]);
             combination.remove(combination.size() - 1);
         }

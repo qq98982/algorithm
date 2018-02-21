@@ -17,7 +17,7 @@ class CombinationSumTest {
 
     @Test
     void getCombinationSumTest() {
-        int[] nums = { 2, 3, 7, 6 };
+        int[] nums = { 2, 3, 7, 7, 6 };
         List<List<Integer>> results = combinationSum.getCombinationSum(nums, 7);
         Assertions.assertEquals(2, results.size());
         Assertions.assertSame(3, results.get(0).size());
@@ -27,8 +27,8 @@ class CombinationSumTest {
     }
 
     @Test
-    void getCombinationSumTest2() {
-        int[] nums = { 2, 3, 5, 7, 6 };
+    void getCombinationSumTestSec() {
+        int[] nums = { 2, 3, 3, 5, 7, 6 };
         List<List<Integer>> results = combinationSum.getCombinationSum(nums, 7);
         Assertions.assertEquals(3, results.size());
         Assertions.assertSame(3, results.get(0).size());
