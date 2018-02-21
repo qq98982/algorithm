@@ -38,4 +38,16 @@ class CombinationSumTest {
         Assertions.assertSame(5, results.get(1).get(1));
         Assertions.assertSame(7, results.get(2).get(0));
     }
+
+    @Test
+    void getCombinationSumTestRepeat() {
+        int[] nums = { 1, 7 };
+        List<List<Integer>> results = combinationSum.getCombinationSum(nums, 7);
+        Assertions.assertEquals(2, results.size());
+        Assertions.assertSame(1, results.get(0).get(0));
+        Assertions.assertSame(1, results.get(0).get(3));
+        Assertions.assertSame(1, results.get(0).get(5));
+        Assertions.assertSame(1, results.get(0).get(6));
+        Assertions.assertSame(7, results.get(1).get(0));
+    }
 }
