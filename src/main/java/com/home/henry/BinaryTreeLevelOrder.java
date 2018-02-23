@@ -10,14 +10,9 @@ class TreeNode {
     public TreeNode right;
     public int value;
 
-    public TreeNode(int value) {
+    TreeNode(int value) {
         this.value = value;
         this.left = this.right = null;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 }
 
