@@ -16,10 +16,8 @@ public class StrStr {
             return 0;
         }
         for (int i = 0; i < source.length() - target.length() + 1; i++) {
-            int m = i;
             for (int j = 0; j < target.length(); j++) {
-                if (source.charAt(m) == target.charAt(j)) {
-                    m++;
+                if (source.charAt(i + j) == target.charAt(j)) {
                     if (j == target.length() - 1) {
                         return i;
                     }
