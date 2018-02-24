@@ -12,16 +12,26 @@ import org.junit.jupiter.api.Test;
 class StrStrTest {
 
     @Test
-    void getIndex() {
+    void getStrStrTest() {
         StrStr str = new StrStr();
-        Assertions.assertEquals(0, str.getIndex("", ""));
-        Assertions.assertEquals(0, str.getIndex("a", "a"));
-        Assertions.assertEquals(-1, str.getIndex("", null));
-        Assertions.assertEquals(-1, str.getIndex("a", "c"));
-        Assertions.assertEquals(-1, str.getIndex("abcdef", "efc"));
-        Assertions.assertEquals(-1, str.getIndex("a", "ac"));
-        Assertions.assertEquals(2, str.getIndex("abcabc", "ca"));
-        Assertions.assertEquals(4, str.getIndex("abcdef", "ef"));
-        Assertions.assertEquals(4, str.getIndex("abcdefefef", "ef"));
+        Assertions.assertEquals(0, str.getStrStr("a", "a"));
+        Assertions.assertEquals(-1, str.getStrStr("", ""));
+        Assertions.assertEquals(-1, str.getStrStr("", null));
+        Assertions.assertEquals(-1, str.getStrStr("a", "c"));
+        Assertions.assertEquals(-1, str.getStrStr("abcdef", "efc"));
+        Assertions.assertEquals(-1, str.getStrStr("a", "ac"));
+        Assertions.assertEquals(2, str.getStrStr("abcabc", "ca"));
+        Assertions.assertEquals(4, str.getStrStr("abcdef", "ef"));
+        Assertions.assertEquals(4, str.getStrStr("abcdefefef", "ef"));
+
+        Assertions.assertEquals(0, str.getStrStrBetter("a", "a"));
+        Assertions.assertEquals(-1, str.getStrStrBetter("", ""));
+        Assertions.assertEquals(-1, str.getStrStrBetter("", null));
+        Assertions.assertEquals(-1, str.getStrStrBetter("a", "c"));
+        Assertions.assertEquals(-1, str.getStrStrBetter("abcdef", "efc"));
+        Assertions.assertEquals(-1, str.getStrStrBetter("a", "ac"));
+        Assertions.assertEquals(2, str.getStrStrBetter("abcabc", "ca"));
+        Assertions.assertEquals(4, str.getStrStrBetter("abcdef", "ef"));
+        Assertions.assertEquals(4, str.getStrStrBetter("abcdefefef", "ef"));
     }
 }
