@@ -10,21 +10,19 @@ class StringPermutationTest {
     @Test
     void permutation() {
         StringPermutation stringPermutation = new StringPermutation();
+        List<String> a = stringPermutation.permutation("aa");
+        Assertions.assertEquals(1, a.size());
         List<String> abc = stringPermutation.permutation("acb");
         Assertions.assertEquals(6, abc.size());
-        for (String s : abc) {
-            Assertions.assertEquals(3, s.length());
-            Assertions.assertTrue(s.contains("a"));
-            Assertions.assertTrue(s.contains("c"));
-            Assertions.assertTrue(s.contains("b"));
-        }
         List<String> abd = stringPermutation.permutation("acbb");
-        Assertions.assertEquals(24, abd.size());
-        for (String s : abd) {
-            Assertions.assertEquals(4, s.length());
-            Assertions.assertTrue(s.contains("a"));
-            Assertions.assertTrue(s.contains("c"));
-            Assertions.assertTrue(s.contains("b"));
-        }
+        Assertions.assertEquals(12, abd.size());
+        List<String> noOrder = stringPermutation.permutation("bcba");
+        Assertions.assertEquals(20, noOrder.size());
+        List<String> five = stringPermutation.permutation("bcdae");
+        Assertions.assertEquals(120, five.size());
+        List<String> six = stringPermutation.permutation("bcdaef");
+        Assertions.assertEquals(720, six.size());
+        List<String> seven = stringPermutation.permutation("gcdaefb");
+        Assertions.assertEquals(5040, seven.size());
     }
 }
