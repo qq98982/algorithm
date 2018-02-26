@@ -19,6 +19,8 @@ class StringPermutationTest {
         List<String> noOrder = stringPermutation.permutation("bcba");
         Assertions.assertEquals(12, noOrder.size());
         List<String> acbbc = stringPermutation.permutation("acbbc");
+        // Permutations of multisets
+        // 5! / 1! * 2! * 2! = 30
         Assertions.assertEquals(30, acbbc.size());
         List<String> five = stringPermutation.permutation("bcdae");
         Assertions.assertEquals(120, five.size());
