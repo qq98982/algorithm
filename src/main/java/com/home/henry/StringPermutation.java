@@ -1,6 +1,7 @@
 package com.home.henry;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -10,6 +11,9 @@ public class StringPermutation {
 
     List<String> permutation(String str) {
         List<String> result = new ArrayList<>();
+        char[] chars = str.toCharArray();
+        Arrays.sort(chars);
+        str = new String(chars);
         permutation("", str, result);
         return result;
     }

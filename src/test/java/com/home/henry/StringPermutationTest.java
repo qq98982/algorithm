@@ -14,10 +14,12 @@ class StringPermutationTest {
         Assertions.assertEquals(1, a.size());
         List<String> abc = stringPermutation.permutation("acb");
         Assertions.assertEquals(6, abc.size());
-        List<String> abd = stringPermutation.permutation("acbb");
-        Assertions.assertEquals(12, abd.size());
+        List<String> acbb = stringPermutation.permutation("acbb");
+        Assertions.assertEquals(12, acbb.size());
         List<String> noOrder = stringPermutation.permutation("bcba");
-        Assertions.assertEquals(20, noOrder.size());
+        Assertions.assertEquals(12, noOrder.size());
+        List<String> acbbc = stringPermutation.permutation("acbbc");
+        Assertions.assertEquals(30, acbbc.size());
         List<String> five = stringPermutation.permutation("bcdae");
         Assertions.assertEquals(120, five.size());
         List<String> six = stringPermutation.permutation("bcdaef");
