@@ -6,7 +6,7 @@ package com.home.henry;
 public class BubbleSort {
     int[] sort(int[] nums) {
         for (int i = 0; i < nums.length - 1; i++) {
-            for (int j = 1; j < nums.length - 1; j++) {
+            for (int j = i; j < nums.length - 1; j++) {
                 if (nums[j] > nums[j + 1]) {
                     swap(nums, j, j + 1);
                 }
@@ -34,7 +34,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         BubbleSort bubbleSort = new BubbleSort();
-        int[] nums = { 11, 1, 7, 5, 9, 3, 8, 20, 19 };
+        int[] nums = { 32, 1, 11, 2, 7, 5, 9, 3, 8, 20, 19 };
         int[] sort = bubbleSort.sort(nums);
         int[] sort2 = bubbleSort.sortMinus(nums);
         for (int aSort : sort) {
