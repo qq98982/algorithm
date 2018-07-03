@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class FindMinInSortAndReversedArrayTest {
 
     @Test
-    void findMax() {
+    void findMin() {
         int[] a = { 10, 20, 30, 40, 50, 1, 2, 3 };
         Assertions.assertEquals(1, FindMinInSortAndReversedArray
                 .findMin(a, 0, a.length - 1));
