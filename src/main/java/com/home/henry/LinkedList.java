@@ -102,4 +102,75 @@ public class LinkedList {
         }
     }
 
+    public void sortedInsert(int value) {
+        Node newNode = new Node(value, null);
+        Node curr = head;
+        if (curr == null || curr.value > value) {
+            newNode.next = head;
+            head = newNode;
+            size++;
+            return;
+        }
+        while (curr.next != null && curr.next.value < value) {
+            curr = curr.next;
+        }
+        newNode.next = curr.next;
+        curr.next = newNode;
+        size++;
+    }
+
+    public static void main(String[] args) {
+        LinkedList n = new LinkedList();
+        n.sortedInsert(5);
+        n.sortedInsert(5);
+        n.print();
+    }
+
+    public boolean isPresent(int value) {
+        Node tmp = head;
+        while (tmp != null) {
+            if (tmp.value == value) {
+                return true;
+            }
+            tmp = tmp.next;
+        }
+        return false;
+    }
+
+    public boolean deleteNode(int value) {
+        Node tmp = head;
+        if (isEmpty()) {
+            return false;
+        }
+        if (head.value == value) {
+            head = head.next;
+            size--;
+            return true;
+        }
+        while (tmp.next != null) {
+            if (tmp.next.value == value) {
+                tmp.next = tmp.next.next;
+                size--;
+                return true;
+            }
+            tmp = tmp.next;
+        }
+        return false;
+    }
+
+    public void reverse() {
+        if (isEmpty()) {
+            return;
+        }
+        Node curr = head;
+        Node prev = null;
+        while (curr != null) {
+            Node tmp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = tmp;
+        }
+        head = prev;
+    }
+
 }
